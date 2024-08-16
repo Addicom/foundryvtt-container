@@ -1,0 +1,12 @@
+services:
+  foundry:
+    image: foundry-vtt:latest
+    build:
+      context: .
+      args:
+        FOUNDRY_URL: $FOUNDRY_URL
+      no_cache: true
+    ports:
+      - "5000:30000"
+    volumes:
+      - $USER_DATA:/userdata
